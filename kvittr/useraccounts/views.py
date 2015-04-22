@@ -28,4 +28,3 @@ def user_login (request):
 		else:
 			context['login_failed'] = True
 	return render(request, 'useraccounts/login.html', context)
-	
