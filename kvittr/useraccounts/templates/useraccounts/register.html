@@ -1,6 +1,11 @@
 {% extends 'useraccounts/base.html' %}
 {% block container %} 
 <h1> Register new user </h1>
+{% if user_saved_successfully %}
+    <div class="alert alert-success"> 
+        User successfully created! 
+    </div>
+{% endif %}
 
 <form method="POST" action="{% url 'user_register' %}">{% csrf_token %}
     <div class="form-group">
