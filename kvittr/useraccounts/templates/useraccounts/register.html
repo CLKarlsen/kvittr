@@ -1,3 +1,5 @@
+{% extends 'useraccounts/base.html' %}
+{% block container %} 
 <h1> Register new user </h1>
 
 <form method="POST" action="{% url 'user_register' %}">{% csrf_token %}
@@ -27,3 +29,4 @@
     </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
+{% endblock %}
