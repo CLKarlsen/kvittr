@@ -4,6 +4,7 @@
 {% if user_saved_successfully %}
     <div class="alert alert-success"> 
         User successfully created! 
+        <a href="{% url 'user_login' %}">Click here to sign in</a>
     </div>
 {% endif %}
 
