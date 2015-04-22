@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
 def user_register(request):
@@ -13,3 +15,17 @@ def user_register(request):
 		user.save()
 		context['user_saved_successfully'] = True
 	return render(request, 'useraccounts/register.html', context)
+
+def user_login (request):
+	context = {}
+	if request.method == 'POST':
+		username = request.POST['username']
+		password = request.POST['password']
+		user = authenticate(username=username, password=password)
+		if user is not None:
+			login(request, user)
+			return redirect('frontpage')
+		else:
+			context['login_failed'] = True
+	return render(request, 'useraccounts/login.html', context)
+	
