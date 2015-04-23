@@ -34,3 +34,20 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.well {
+  margin-top: 10%;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px; 
+}
+
+.center {
+  text-align: center;
+}
