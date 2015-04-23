@@ -8,6 +8,18 @@
     </div>
 {% endif %}
 
+{% if info_exist %}
+    <div class="alert alert-danger"> 
+        Username is already taken!
+    </div>
+{% endif %}
+
+{% if email_exist %}
+    <div class="alert alert-danger"> 
+        Email is already in use!
+    </div>
+{% endif %}
+
 <form method="POST" action="{% url 'user_register' %}">{% csrf_token %}
     <div class="form-group">
         <label for="inputFirstName">First Name:</label>
