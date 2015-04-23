@@ -9,3 +9,6 @@ class Message(models.Model):
 
 	def __unicode__(self):
 		return u'%s' % self.message
+
+	class Meta:
+		ordering = ['-id']
