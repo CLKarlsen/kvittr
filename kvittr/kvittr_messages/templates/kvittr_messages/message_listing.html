@@ -1,4 +1,5 @@
 {% extends 'theme/base.html' %}
+{% block subheader %} Wall {% endblock %}
 {% block pagecontent %}
     {{ block.super }}
         <ul>
@@ -12,4 +13,28 @@
             </li>
         {% endfor %}
     </ul>
+
+    <nav>
+        <ul class="pager">
+            {% if messages.has_previous %}
+                <li class="previous">
+                    <a href="?page={{ messages.previous_page_number }}">
+                    <span aria-hidden="true"> &larr; </span> Forrige
+                    </a>
+                </li>
+            {% endif %}
+                <li>
+                    <span class="current">
+                        Side {{ messages.number }} av {{ messages.paginator.num_pages }}
+                    </span>
+                </li>
+            {% if messages.has_next %}
+                <li class="next">
+                    <a href="?page={{ messages.next_page_number }}">
+                        Neste <span aria-hidden="true"> &rarr; </span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
 {% endblock %}
