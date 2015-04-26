@@ -17,8 +17,5 @@ def message_listing(request):
 	except EmptyPage:
 		messages = paginator.page(paginator.num_pages)
 
-
-
 	context = {'messages': messages}
 	return render(request, 'kvittr_messages/message_listing.html', context)
-	#return HttpResponse("It worked!")
