@@ -2,6 +2,8 @@
 {% block subheader %} Wall {% endblock %}
 {% block pagecontent %}
     {{ block.super }}
+
+    {% if user.is_authenticated %}
     <div class="row" style="margin-bottom:20px;">
         <div class="col-sm-12">
             <h3>Tell us whats on your mind, <a href="">{{ user.username }}</a></h3> 
@@ -20,6 +22,7 @@
             </form>
         </div>
     </div>
+    {% endif %}
 
         <ul>
         {% for message in messages %}
