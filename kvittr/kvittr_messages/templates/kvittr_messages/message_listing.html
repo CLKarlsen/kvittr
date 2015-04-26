@@ -4,24 +4,26 @@
     {{ block.super }}
 
     {% if user.is_authenticated %}
-    <div class="row" style="margin-bottom:20px;">
+    <div class="row" style="margin-bottom:10px; width: 590px; margin-left: auto; margin-right: auto;">
         <div class="col-sm-12">
-            <h3>Tell us whats on your mind, <a href="">{{ user.username }}</a></h3> 
+            <h3 class="text-center">Tell us whats on your mind, {{ user.username }}</h3> 
             <form class="form-horizontal" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <div class="col-sm-12">
-                       <textarea class="form-control" rows="3" name="new_post" required></textarea>
+                       <textarea class="form-control" rows="1" name="new_post" required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <button type="submit" class="btn btn-default">Save post</button>
+                        <button type="submit" class="btn btn-primary ">Save post</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
+    <hr>
     {% endif %}
 
         <ul>
