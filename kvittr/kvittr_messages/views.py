@@ -28,3 +28,6 @@ def message_listing(request):
 
 	context = {'messages': messages}
 	return render(request, 'kvittr_messages/message_listing.html', context)
+
+
+
