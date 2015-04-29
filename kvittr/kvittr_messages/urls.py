@@ -4,4 +4,5 @@ from kvittr_messages import views
 
 urlpatterns = patterns('',
 	url(r'^$', views.message_listing, name='message_listing'),
+	url(r'^(\d+)/add_likes$', views.add_likes, name='add_likes'),
 )
