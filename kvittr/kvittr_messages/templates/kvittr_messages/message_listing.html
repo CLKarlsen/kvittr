@@ -32,12 +32,13 @@
             <li class="well" style="list-style:none; width: 600px; margin-left: auto; margin-right: auto;">
                 <p>Written by: {{ message.created_by }} </p>
                 <blockquote>{{ message.message }}</blockquote> 
-
+        {% if user.is_authenticated %}
                 <button type="button" class="add-likes-link btn btn-default" aria-label="Like" data-messageid="{{ message.id }}">
                   <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Like </span>
                 </button>
+        {% endif %}
 
-                <h5 id="id-likes-for-message-{{ message.id }}" class="pull-right"> Likes: {{ message.likes }}</h5>
+                <h5 id="id-likes-for-message-{{ message.id }}"> {{ message.likes }}</h5>
             </li>
         {% endfor %}
         </ul>
