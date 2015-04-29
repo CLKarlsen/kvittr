@@ -1,7 +1,7 @@
 {% extends 'theme/base.html' %}
 {% block subheader %} Wall {% endblock %}
 {% block pagecontent %}
-    {{ block.super }}
+
 
     {% if user.is_authenticated %}
     <div class="row" style="margin-bottom:10px; width: 590px; margin-left: auto; margin-right: auto;">
@@ -30,11 +30,18 @@
         <ul>
         {% for message in messages %}
             <li class="well" style="list-style:none; width: 600px; margin-left: auto; margin-right: auto;">
-                <h4>{{ message.message }}</h4> 
-                <p> -{{ message.created_by }} </p>
+                <p>Written by: {{ message.created_by }} </p>
+                <blockquote>{{ message.message }}</blockquote> 
+
+                <button type="button" class="add-likes-link btn btn-default" aria-label="Like" data-messageid="{{ message.id }}">
+                  <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Like </span>
+                </button>
+
+                <h5 id="id-likes-for-message-{{ message.id }}" class="pull-right"> Likes: {{ message.likes }}</h5>
             </li>
         {% endfor %}
         </ul>
+
 
     <nav>
         <ul class="pager">
@@ -59,4 +66,5 @@
             {% endif %}
         </ul>
     </nav>
+
 {% endblock %}
