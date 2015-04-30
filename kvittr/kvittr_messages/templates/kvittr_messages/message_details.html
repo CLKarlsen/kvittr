@@ -14,9 +14,9 @@
         <button type="button" class="add-likes-link btn btn-default" aria-label="Like" data-messageid="{{ message.id }}">
         	<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Like </span>
         </button>
+        	<hr>
         {% endif %}
 
-      	<hr>
         <h4> Number of likes: </h4>
         <h4 id="id-likes-for-message-{{ message.id }}"> {{ message.likes }}</h4> 
 	</div>
