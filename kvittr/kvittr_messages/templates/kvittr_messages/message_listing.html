@@ -39,6 +39,7 @@
         {% endif %}
 
                 <h5 id="id-likes-for-message-{{ message.id }}"> {{ message.likes }}</h5>
+                <a href="{% url 'message_details' message.id %}" class="btn btn-sm btn-default">Details</a>
             </li>
         {% endfor %}
         </ul>
