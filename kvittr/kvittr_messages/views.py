@@ -30,6 +30,12 @@ def message_listing(request):
 	context = {'messages': messages}
 	return render(request, 'kvittr_messages/message_listing.html', context)
 
+def message_details(request, message_id):
+	message = Message.objects.get(pk=message_id)
+	messages = Message.objects.all()
+	context = {'message': message}
+	return render(request, 'kvittr_messages/message_details.html', context)
+
 def add_likes(request, message_id):
 	message = Message.objects.get(pk=message_id)
 	message.likes = message.likes + 1
