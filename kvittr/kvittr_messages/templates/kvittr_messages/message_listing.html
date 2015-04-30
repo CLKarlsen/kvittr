@@ -1,6 +1,6 @@
 {% extends 'theme/base.html' %}
-{% block subheader %} Wall {% endblock %}
 {% block pagecontent %}
+    
 
 
     {% if user.is_authenticated %}
@@ -22,8 +22,13 @@
             </form>
         </div>
     </div>
-
     <hr>
+    {% else %}
+        <div class="container">
+            <div class="page-header">
+                <h1 class="text-center">Kvittr Wall <small>- register to write your own messages and to like others! </small></h1>
+            </div>
+        </div>
     {% endif %}
 
 
@@ -32,6 +37,7 @@
             <li class="well" style="list-style:none; width: 600px; margin-left: auto; margin-right: auto;">
                 <p>Written by: {{ message.created_by }} </p>
                 <blockquote>{{ message.message }}</blockquote> 
+        
         {% if user.is_authenticated %}
                 <button type="button" class="add-likes-link btn btn-default" aria-label="Like" data-messageid="{{ message.id }}">
                   <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Like </span>

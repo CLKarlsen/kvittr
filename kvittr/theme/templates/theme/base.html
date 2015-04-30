@@ -1,4 +1,14 @@
 {% extends 'theme/site_base.html' %}
+
+{% block extra_head %} 
+  <style>
+    body {
+        background-image: url("images/background.jpg");
+        background-repeat:no-repeat;
+      }
+  </style>
+{% endblock extra_head %}
+
 {% block body %}
 
     <nav class="navbar navbar-default" role="navigation">
@@ -53,6 +63,7 @@
     </nav>
 
     <div class="container">
+
        <!-- <div class="page-header">
             {% block pageheader %}
 
