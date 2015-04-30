@@ -1,7 +1,26 @@
 {% extends 'theme/base.html' %}
-{% block subheader %}Dashboard{% endblock %}
+{% block extra_head %} 
+	<style>
+		body {
+    		background-image: url("static/theme/images/background.jpg");
+    		background-repeat:no-repeat;
+			}
+	</style>
+{% endblock extra_head %}
 {% block pagecontent %}
-<p>
-    Register and say hello today!
-</p>
+
+<br>
+
+<img src="static/theme/images/kvittr_logo.png" class="img-responsive center-block"style="width:40%;  margin: 0 auto; margin-bottom: 5%; margin-top: 5%;"/>
+
+<div class="row">
+		<div class="col-xs-2">
+		</div>
+        <div class="col-xs-4">
+          <a href="{% url 'user_register' %}" class="btn btn-block btn-lg btn-primary" style="text-align:center;">Register</a>
+        </div>
+        <div class="col-xs-4">
+          <a href="{% url 'user_login' %}" class="btn btn-block btn-lg btn-success" style="text-align:center;">Sign in</a>
+        </div>
+</div> <!-- /row -->
 {% endblock %}
