@@ -2,6 +2,24 @@
 {% block subheader %} Message details {% endblock %}
 {% block pagecontent %}
 
+	<div class="well" style="margin-left: auto; margin-right: auto;">
+		<p>Written by: {{ message.created_by }} </p>
+		<p>Published: {{ message.created_datetime }}
+        
+        <hr>
+        <blockquote>{{ message.message }}</blockquote> 
+
+        <hr> 
+        {% if user.is_authenticated %}
+        <button type="button" class="add-likes-link btn btn-default" aria-label="Like" data-messageid="{{ message.id }}">
+        	<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Like </span>
+        </button>
+        {% endif %}
+
+      	<hr>
+        <h4> Number of likes: </h4>
+        <h4 id="id-likes-for-message-{{ message.id }}"> {{ message.likes }}</h4> 
+	</div>
 
 
 {% endblock %}
