@@ -1,10 +1,19 @@
 {% extends 'theme/base.html' %}
 {% load staticfiles %}
-{% block extra_head %} 
+{% block extra_head %}
+    <meta property="og:title" content="{{ message.created_by }}, has published a new message!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="kvittr.no" />
+    <meta property="og:description" content="{{ message.message }}" />
+    <meta property="og:url" content="http://kvittr.no/kvittr_messages/{{ message.id }}" />
+        
         <link rel="stylesheet" href="{% static "kvittr_messages/css/style.css" %}">
 {% endblock extra_head %}
 {% block subheader %} Message details {% endblock %}
 {% block pagecontent %}
+
+        <h1 class="text-center"> Details about message {{ message.id }} </h1>
+        <br>
 
 	<div class="well well_center">
 		<h2>Written by: {{ message.created_by }} </h2>
@@ -20,7 +29,10 @@
                 {% endif %}
                 <span class="label label-success label-as-badge" id="id-likes-for-message-{{ message.id }}">{{ message.likes }}</span>
         </button>
-	</div>
 
+        <hr>
+        <a href="http://www.facebook.com/" class="btn btn-facebook">f | Share on Facebook</a>
+        <a href="{% url 'message_listing' %}" class="btn btn-danger pull-right">Go back</a>
+	</div>
 
 {% endblock %}
