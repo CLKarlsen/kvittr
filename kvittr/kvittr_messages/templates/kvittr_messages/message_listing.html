@@ -2,25 +2,31 @@
 {% block pagecontent %}
     
     {% if user.is_authenticated %}
-    <div class="row" style="margin-bottom:10px; width: 590px; margin-left: auto; margin-right: auto;">
-        <div class="col-sm-12">
-            <h3 class="text-center">Tell us whats on your mind, {{ user.username }}</h3> 
+
+    <div class="col-md-3">
+        <div class="well">
+            <h4>You are signed in as:</h4>
+            <h5>Username: {{ user.username }}</h5>
+            <h5>Email: {{ user.email }}</h5>
+            <br>
+             <a href="{% url 'user_profile' %}" class="btn btn-block btn-sm btn-success text-center">Profile</a>
+            <a href="{% url 'user_logout' %}" class="btn btn-block btn-sm btn-danger center-block text-center">Sign out</a>
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:-17%; width: 550px; margin-left: auto; margin-right: auto;">
+        <div class="col-md-13">
             <form class="form-horizontal" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                    <div class="col-sm-12">
-                       <textarea class="form-control" rows="1" name="new_post" required></textarea>
+                    <div class="col-sm-10">
+                       <textarea class="form-control" rows="1" name="new_post" required placeholder="Whats on your mind?"></textarea>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary ">Save post</button>
-                    </div>
+                    <button type="submit" class="btn btn-primary ">Publish</button>
                 </div>
             </form>
         </div>
     </div>
-    <hr>
     {% else %}
         <div class="container">
             <div class="page-header">
@@ -30,7 +36,7 @@
     {% endif %}
 
 
-        <ul>
+       <ul>
         {% for message in messages %}
             <li class="well" style="list-style:none; width: 600px; margin-left: auto; margin-right: auto;">
                 <p>Written by: {{ message.created_by }} </p>
@@ -39,11 +45,11 @@
         {% if user.is_authenticated %}
                 <button type="button" class="add-likes-link btn btn-default" aria-label="Like" data-messageid="{{ message.id }}">
                   <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Like </span>
+                  {% endif %}
+                  <span class="label label-success label-as-badge" id="id-likes-for-message-{{ message.id }}"> {{ message.likes }}</span>
                 </button>
-        {% endif %}
 
-                <h5 id="id-likes-for-message-{{ message.id }}"> {{ message.likes }}</h5>
-                <a href="{% url 'message_details' message.id %}" class="btn btn-sm btn-default">Details</a>
+                <a href="{% url 'message_details' message.id %}" class="btn btn-sm btn-warning pull-right">Details</a>
             </li>
         {% endfor %}
         </ul>
