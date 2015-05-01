@@ -21,6 +21,21 @@ def user_register(request):
 			context['user_saved_successfully'] = True
 	return render(request, 'useraccounts/register.html', context)
 
+def user_edit_profile(request):
+	context = {}
+	if request.method == "POST":
+		user = request.user
+		if User.objects.filter(email=request.POST['email']).exists():
+			context['email_exist'] = True
+		else:
+			user.first_name = request.POST.get('firstname')
+			user.last_name = request.POST.get('lastname')
+			user.email = request.POST.get('email')
+			user.save()
+			context['user_saved_successfully'] = True
+	return render(request, 'useraccounts/user_profile.html', context)
+
+
 def user_login (request):
 	context = {}
 	if request.method == 'POST':
