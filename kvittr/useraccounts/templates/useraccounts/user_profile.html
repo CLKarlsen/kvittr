@@ -3,13 +3,13 @@
 	<div class="container body">
         <h1 class="center"> Edit your profile </h1>
             {% if user_saved_successfully %}
-                <div class="alert alert-success"> 
+                <div class="alert alert-success form-signin"> 
                     Email successfully saved! 
                 </div>
             {% endif %}
 
             {% if email_exist %}
-                <div class="alert alert-danger"> 
+                <div class="alert alert-danger form-signin"> 
                     Email is already in use!
                 </div>
             {% endif %}
