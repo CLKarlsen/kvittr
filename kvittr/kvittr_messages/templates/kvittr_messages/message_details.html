@@ -3,22 +3,19 @@
 {% block pagecontent %}
 
 	<div class="well" style="margin-left: auto; margin-right: auto;">
-		<p>Written by: {{ message.created_by }} </p>
-		<p>Published: {{ message.created_datetime }}
+		<h2>Written by: {{ message.created_by }} </h2>
+		<h5>Published: {{ message.created_datetime }} </h5>
         
-        <hr>
+                <br>
         <blockquote>{{ message.message }}</blockquote> 
 
-        <hr> 
+
         {% if user.is_authenticated %}
         <button type="button" class="add-likes-link btn btn-default" aria-label="Like" data-messageid="{{ message.id }}">
         	<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Like </span>
+                {% endif %}
+                <span class="label label-success label-as-badge" id="id-likes-for-message-{{ message.id }}">{{ message.likes }}</span>
         </button>
-        	<hr>
-        {% endif %}
-
-        <h4> Number of likes: </h4>
-        <h4 id="id-likes-for-message-{{ message.id }}"> {{ message.likes }}</h4> 
 	</div>
 
 
