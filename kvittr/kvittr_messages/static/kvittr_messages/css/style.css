@@ -2,3 +2,17 @@ body {
     background-image: url("/static/kvittr_messages/images/background.jpg");
     background-repeat:no-repeat;
 }
+
+.well_center {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wall {
+	margin-bottom:-15%;
+	width: 550px;
+	height: auto;
+	margin-left: auto; 
+	margin-right: auto;
+}

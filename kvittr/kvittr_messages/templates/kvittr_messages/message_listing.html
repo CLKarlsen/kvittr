@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="row" style="margin-bottom:-17%; width: 550px; margin-left: auto; margin-right: auto;">
+    <div class="row wall">
         <div class="col-md-13">
             <form class="form-horizontal" method="POST">
                 {% csrf_token %}
@@ -49,7 +49,9 @@
         {% if user.is_authenticated %}
                 <button type="button" class="add-likes-link btn btn-default" aria-label="Like" data-messageid="{{ message.id }}">
                   <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Like </span>
+                  
                   {% endif %}
+                  
                   <span class="label label-success label-as-badge" id="id-likes-for-message-{{ message.id }}"> {{ message.likes }}</span>
                 </button>
 
