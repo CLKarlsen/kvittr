@@ -1,8 +1,7 @@
 {% extends 'useraccounts/base.html' %}
 {% block container %}
-
 	<div class="container">
-         <h1 class="center"> Edit your profile </h1>
+        <h1 class="center"> Edit your profile </h1>
         <div class="well well-sm" style="margin-top:0;">
             {% if user_saved_successfully %}
                 <div class="alert alert-success"> 
@@ -16,13 +15,6 @@
                 </div>
             {% endif %}
 
-            {% if email_none %}
-                <div class="alert alert-danger"> 
-                    Email NONE!!
-                </div>
-            {% endif %}
-
-            <hr>
 
     <form class="form-signin" method="POST" action="{% url 'user_edit_profile' %}">
         {% csrf_token %}
@@ -47,5 +39,7 @@
 </form>
 </div>
 </div>
+
+
 
 {% endblock %}
