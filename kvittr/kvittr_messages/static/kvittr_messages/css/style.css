@@ -10,9 +10,14 @@ body {
 }
 
 .wall {
-	margin-bottom:-15%;
+	margin-bottom:-28%;
 	width: 550px;
 	height: auto;
 	margin-left: auto; 
 	margin-right: auto;
+}
+
+.profile_pic {
+	width: 70px;
+	height: 70px;
 }

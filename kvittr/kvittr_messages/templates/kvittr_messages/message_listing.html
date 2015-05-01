@@ -9,7 +9,11 @@
 
     <div class="col-md-3">
         <div class="well">
-            <h4>You are signed in as:</h4>
+            <img src="{% static "kvittr_messages/images/bird.png" %}" class="img-circle profile_pic center-block" alt="Bird"> 
+            <br>
+            <h4>Your profile information:</h4>
+            <h5>Firstname: {{ user.first_name }}</h5>
+            <h5>Lastname: {{ user.last_name }}</h5>
             <h5>Username: {{ user.username }}</h5>
             <h5>Email: {{ user.email }}</h5>
             <br>
