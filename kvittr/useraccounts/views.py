@@ -44,7 +44,7 @@ def user_login (request):
 		user = authenticate(username=username, password=password)
 		if user is not None:
 			login(request, user)
-			return redirect('frontpage')
+			return redirect('message_listing')
 		else:
 			context['login_failed'] = True
 	return render(request, 'useraccounts/login.html', context)
