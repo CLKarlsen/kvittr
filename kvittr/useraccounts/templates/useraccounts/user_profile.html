@@ -1,8 +1,7 @@
 {% extends 'useraccounts/base.html' %}
 {% block container %}
-	<div class="container">
+	<div class="container body">
         <h1 class="center"> Edit your profile </h1>
-        <div class="well well-sm" style="margin-top:0;">
             {% if user_saved_successfully %}
                 <div class="alert alert-success"> 
                     Email successfully saved! 
@@ -38,7 +37,7 @@
       <a href="{% url 'frontpage' %}" class="btn btn-danger">Go back</a>
 </form>
 </div>
-</div>
+
 
 
 
