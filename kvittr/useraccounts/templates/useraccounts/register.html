@@ -2,20 +2,20 @@
 {% block container %} 
 <h1 class="form-signin"> Register new user </h1>
 {% if user_saved_successfully %}
-    <div class="alert alert-success"> 
+    <div class="alert alert-success form-signin"> 
         User successfully created! 
         <a href="{% url 'user_login' %}">Click here to sign in</a>
     </div>
 {% endif %}
 
 {% if info_exist %}
-    <div class="alert alert-danger"> 
+    <div class="alert alert-danger form-signin"> 
         Username is already taken!
     </div>
 {% endif %}
 
 {% if email_exist %}
-    <div class="alert alert-danger"> 
+    <div class="alert alert-danger form-signin"> 
         Email is already in use!
     </div>
 {% endif %}

@@ -23,7 +23,19 @@
 	        </div>
 	</div> <!-- /row -->
 {% else %}
-	<h1> Hi {{ user.username }}</h1>
+
+<div class="row">
+	<h1 class="text-center" style="margin-top: 5%; margin-bottom: 5%;"> What would you like to do today, {{ user.username }}?</h1>
+	<div class="col-xs-2">
+	</div>
+	<div class="col-xs-4">
+	    <a href="{% url 'message_listing' %}" class="btn btn-block btn-lg btn-primary" style="text-align:center;">Write</a>
+	</div>
+	<div class="col-xs-4">
+	    <a href="{% url 'user_profile' %}" class="btn btn-block btn-lg btn-success" style="text-align:center;">Profile</a>
+	</div>
+</div> <!-- /row -->
+
 {% endif %}
 
 {% endblock %}
