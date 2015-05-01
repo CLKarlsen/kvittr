@@ -23,27 +23,27 @@
 <form class="form-signin" method="POST" action="{% url 'user_register' %}">{% csrf_token %}
     <div class="form-group">
         <label for="inputFirstName">First Name:</label>
-        <input type="text" class="form-control" name="firstname" id="inputFirstName" placeholder="Enter First Name">
+        <input type="text" class="form-control" name="firstname" id="inputFirstName" placeholder="Enter First Name" required>
     </div>
 
     <div class="form-group">
         <label for="inputLastName">Last Name:</label>
-        <input type="text" class="form-control" name="lastname" id="inputLastName" placeholder="Enter Last Name">
+        <input type="text" class="form-control" name="lastname" id="inputLastName" placeholder="Enter Last Name" required>
     </div>
 
     <div class="form-group">
         <label for="inputUsername">Username:</label>
-        <input type="text" class="form-control" name="username" id="inputUsername" placeholder="Enter Username">
+        <input type="text" class="form-control" name="username" id="inputUsername" placeholder="Enter Username" required>
     </div>
 
     <div class="form-group">
         <label for="inputEmail">Email Address:</label>
-        <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Enter Email">
+        <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Enter Email" required>
     </div>
 
     <div class="form-group">
         <label for="inputPassword">Password:</label>
-        <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Enter Password">
+        <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Enter Password" required>
     </div>
   <button type="submit" class="btn btn-default">Submit</button>
   <a href="{% url 'frontpage' %}" class="btn btn-danger">Go back</a>
