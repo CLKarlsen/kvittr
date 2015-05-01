@@ -19,7 +19,7 @@ def message_listing(request):
 
 	messages = Message.objects.all()
 	page_number = request.GET.get('page')
-	paginator = Paginator(messages, 6)
+	paginator = Paginator(messages, 4)
 	try:
 		messages = paginator.page(page_number)
 	except PageNotAnInteger:
