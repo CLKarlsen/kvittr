@@ -4,7 +4,7 @@
         <h1 class="center"> Edit your profile </h1>
             {% if user_saved_successfully %}
                 <div class="alert alert-success form-signin"> 
-                    Email successfully saved! 
+                    Changes has been successfully saved! 
                 </div>
             {% endif %}
 
@@ -20,17 +20,17 @@
 
         <div class="form-group">
             <label for="inputFirstName">First Name:</label>
-            <input type="text" class="form-control" name="firstname" id="inputFirstName" placeholder="Enter First Name" required>
+            <input type="text" class="form-control" name="firstname" id="inputFirstName" required value="{{ user.first_name }}">
         </div>
 
         <div class="form-group">
             <label for="inputLastName">Last Name:</label>
-            <input type="text" class="form-control" name="lastname" id="inputLastName" placeholder="Enter Last Name" required>
+            <input type="text" class="form-control" name="lastname" id="inputLastName"required value="{{ user.last_name }}">
         </div>
 
         <div class="form-group">
             <label for="inputEmail">Email Address:</label>
-            <input type="email" class="form-control" name="email" id="inputEmail" placeholder="New Email" required>
+            <input type="email" class="form-control" name="email" id="inputEmail" required value="{{ user.email }}">
         </div>
 
       <button type="submit" class="btn btn-default">Submit</button>
