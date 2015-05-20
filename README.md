@@ -5,15 +5,15 @@ Exam project - ITM30614 - Spring 2015
 Start with forking this repository, then create a virtual environment.
 
 ```
-# creating a virtual environment called kvittr
-# in the directory called virtualenvironments
+# creating a virtual environment called kvittr in the directory called
+# virtualenvironments
 $> virtualenv virtualenvironments/kvittr
 
 # Activates the environment
 $> source virtualenvironments/kvittr/bin/activate
 
-# Notice that (kvittr) has appeard, this indicates that the virtual
-# enviroment kvittr is activated.
+# Notice that (kvittr) has appeard, this indicates that the virtual enviroment kvittr
+# is activated.
 (kvittr)$> ls
     djangoprojects      virtualenvironments
 (kvittr)$> cd djangoprojects/
@@ -29,3 +29,16 @@ $> source virtualenvironments/kvittr/bin/activate
     Successfully installed Django
 
 ```
+
+When this is done, you need to run the following in the terminal.
+
+```
+# Makes the migrations in the database
+(kvittr)kvittr $> python manage.py makemigrations
+
+# Updating the database
+(kvittr)kvittr $> python manage.py migrate
+
+```
+
+Now you should be good to go!
