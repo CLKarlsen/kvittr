@@ -1,6 +1,16 @@
 # kvittr
 Exam project - ITM30614 - Spring 2015
 
+## What is this?
+Kvittr is supposed to be a simple version of a social media, where you can:
+
+*register as a user 
+*sign in 
+*write messages and publish them on a wall
+*read other members messages
+*like messages
+
+
 ## How to use
 Start with forking this repository, then create a virtual environment.
 
